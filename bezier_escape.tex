@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+
+\title{Numerical general relativity using Euler integration}
+\author{S. Halayka\footnote{sjhalayka@gmail.com}}
+\date{\today\;\currenttime}
+
+\usepackage{datetime}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[margin=0.9in]{geometry}
+%\doublespace
+
+
+
+\begin{document}
+
+
+
+ 
+\maketitle
+
+\begin{abstract}
+Two numerical solutions for general relativity are provided.
+The topics under consideration are the deflection of light and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
+To simplify the calculations, Euler integration is used.
+\end{abstract}
+
+
+
+
+
+\section{Introduction}
+
+- Used Euler
+
+- Shapiro time delay
+- Einstein-Pound-Rebka red/blueshift
+
+
+
+
+
+
+
+Euler is just fine for calculating deflection and precession.
+
+
+
+
+- The predicted amount is $1.75$ arc seconds, which is practically identical to the amount given by the analytical solution.
+
+
+
+
+The analytical solution for the deflection angle is:
+\begin{equation}
+\delta_{Deflection} = \frac{4GM_{Sun}}{c^2} \frac{1}{\pi\;180 \times 3600} = 1.75 \textrm{ arc seconds}.
+\end{equation}
+
+The analytical solution for the precession of the perihelion of Mercury is:
+\begin{equation}
+\delta_{Precession} = \frac{6 \pi GM_{Sun}}{c^2 (1 - e^2) a} \frac{1}{\pi\;180 \times 3600} = 42.937 \textrm{ arc seconds per Earth century},
+\end{equation}
+where $e = 0.2056$ is the eccentricity and $a = 57.909 \times 10^9$ is the semi-major axis.
+
+
+
+\begin{equation}
+R_{Schwarzschild} = \frac{2GM_{Sun}}{c^2}.
+\end{equation}
+
+
+
+Euler leads to a negative rotation, but given a small enough timeslice, this negative rotation becomes negligible:
+\begin{equation}
+\delta_{Timeslice} = \frac{c}{|v_{Orbiter}|} 10^{-5}.
+\end{equation}
+
+
+
+
+- Altogether the relativistic precession predicted is $46$ arc seconds per Earth century, where the amount given by the analytical solution is $43$ arc seconds per Earth century.
+
+Where $\ell$ denotes location, and $\vec{d}$ denotes the direction vector that points from Mercury toward the Sun:
+\begin{equation}
+\vec{d} = \ell_{Sun} - \ell_{Orbiter},	
+\end{equation}
+\begin{equation}
+\hat{d} = \frac{\vec{d}}{\lvert\lvert \vec{d} \rvert\rvert}.
+\end{equation}
+The acceleration is:
+\begin{equation}
+\vec{g} =  \frac{\hat{d} G M_{Sun}}{{\lvert\lvert \vec{d} \rvert\rvert}^2}.
+\end{equation}
+
+
+Two important values are:
+\begin{equation}
+\alpha = 2 - \sqrt{1 - \frac{|v_{Orbiter}|^2}{c^2}}.
+\end{equation}
+\begin{equation}
+\beta = \sqrt{1 - \frac{R_{Schwarzschild}}{\lvert \lvert \vec{d} \rvert \rvert}}.
+\end{equation}
+
+The Euler integration is:
+\begin{equation}
+v_{Orbiter} = v_{Orbiter} + \alpha \vec{g} \delta_{Timeslice},
+\end{equation}
+\begin{equation}
+L_{Orbiter} = L_{Orbiter} + \beta v_{Orbiter} \delta_{Timeslice}.
+\end{equation}
+
+
+
+
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{misner} Misner et al. Gravitation. (1970)
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
