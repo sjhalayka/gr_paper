@@ -39,11 +39,15 @@ To simplify the calculations, Euler integration is used.
 
 
 Euler is just fine for calculating deflection and precession.
-That is, Euler leads to a negative rotation, but given a small enough timeslice, this negative rotation becomes negligible:
+
+In the case of deflection, the timeslice is simply:
+\begin{equation}
+\delta_{Timeslice} = 1.
+\end{equation}
+Note that Euler integration automatically leads to a negative rotation in terms of Mercury's orbit plane, but given a small enough timeslice, this negative rotation becomes negligible:
 \begin{equation}
 \delta_{Timeslice} = \frac{c}{\lvert\lvert \vec{v}_{Orbiter} \rvert \rvert} \times 10^{-5}.
 \end{equation}
-
 
 
 
