@@ -25,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-A numerical solution for general relativity in the Newtonian regime is provided.
+A novel numerical solution for general relativity in the Newtonian regime is provided.
 The topics under consideration are the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
 To simplify the calculations, Euler integration is used.
 \end{abstract}
@@ -37,7 +37,17 @@ To simplify the calculations, Euler integration is used.
 \section{On integration using steps in time}
 
 Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
-We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, and non-rotating \cite{misner}.
+We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, and non-rotating \cite{misner}:
+\begin{equation}
+R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
+\end{equation}
+\begin{equation}
+ds^2 = -\left( 1 - \frac{R_{Schwarzschild}}{r} \right) c^2 dt^2 + \frac{dr^2}{\left( 1 - \frac{R_{Schwarzschild}}{r} \right)} + r^2 (d\theta^2 + \sin^2 \theta d\phi^2),
+\end{equation}
+where $R_{Schwarzschild}$ is the Schwarzschild radius
+\begin{equation}
+R_{Schwarzschild} = \frac{2GM}{c^2}.
+\end{equation}
 
 In the case of deflection of photons and neutrinos by the Sun, the timeslice that we used is:
 \begin{equation}
@@ -86,7 +96,7 @@ One important value is:
 
 Another important value is:
 \begin{equation}
-\beta = \sqrt{1 - \frac{2GM_{Sun}}{c^2 \lvert \lvert \vec{d} \rvert \rvert}}.
+\beta = \sqrt{1 - \frac{R_{Schwarzschild}}{\lvert \lvert \vec{d} \rvert \rvert}}.
 \end{equation}
 
 Finally, the Euler integration is:
@@ -97,7 +107,7 @@ Finally, the Euler integration is:
 \ell_{Orbiter} = \ell_{Orbiter} + \beta \vec{v}_{Orbiter} \delta_{Timeslice}.
 \end{equation}
 
-Note that Eq. 8 goes to show that internal process is equal to a resistance to gravitation, and that $2G$ is the fundamental constant, not $G$.
+Note that Eq. 11 goes to show that internal process is equal to a resistance to gravitation, and that $2G$ is the fundamental constant, not $G$.
 
 
 
