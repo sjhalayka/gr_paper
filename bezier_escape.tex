@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 
-\title{Post-Newtonian numerical general relativity using Euler integration}
+\title{On simulating post-Newtonian numerical general relativity using Euler integration}
 \author{S. Halayka\footnote{sjhalayka@gmail.com}}
 \date{\today\;\currenttime}
 
@@ -34,11 +34,10 @@ To simplify the calculations, Euler integration is used.
 
 
 
-\section{Introduction}
+\section{On integration using steps in time}
 
 Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
-
-We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, and non-rotating.
+We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, and non-rotating \cite{misner}.
 
 In the case of deflection of photons and neutrinos by the Sun, the timeslice that we used is:
 \begin{equation}
@@ -82,9 +81,8 @@ The acceleration vector is:
 
 One important value is:
 \begin{equation}
-\alpha = 2 - \sqrt{1 - \frac{\lvert\lvert \vec{v}_{Orbiter}\rvert\rvert^2}{c^2}},
+\alpha = 2 - \sqrt{1 - \frac{\lvert\lvert \vec{v}_{Orbiter}\rvert\rvert^2}{c^2}}.
 \end{equation}
-where internal process is seen to be a resistance to gravitation, and that $2G$ is the fundamental constant, not $G$.
 
 Another important value is:
 \begin{equation}
@@ -99,6 +97,7 @@ Finally, the Euler integration is:
 \ell_{Orbiter} = \ell_{Orbiter} + \beta \vec{v}_{Orbiter} \delta_{Timeslice}.
 \end{equation}
 
+Note that Eq. 8 goes to show that internal process is equal to a resistance to gravitation, and that $2G$ is the fundamental constant, not $G$.
 
 
 
