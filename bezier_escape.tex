@@ -82,11 +82,12 @@ Where $\ell_s$ denotes the Sun's location, $\ell_o$ denotes the orbiter's locati
 \end{equation}
 The Newtonian acceleration vector is:
 \begin{equation}
-\vec{g}_n =  \frac{\hat{d} G M}{{\lvert\lvert \vec{d} \rvert\rvert}^2}.
+\vec{g}_n = \frac{\hat{d} G M}{{\lvert\lvert \vec{d} \rvert\rvert}^2}.
 \end{equation}
 
 One important value is related to the kinematic time dilation:
 \begin{equation}
+\label{eq_kinematic}
 \alpha = 2 - \sqrt{1 - \frac{\lvert\lvert \vec{v}_{o}\rvert\rvert^2}{c^2}}.
 \end{equation}
 Another important value is the gravitational time dilation:
@@ -95,14 +96,12 @@ Another important value is the gravitational time dilation:
 \end{equation}
 
 Finally, the Euler integration is:
-\begin{equation}
-\vec{v}_{o}(t + \delta_t) = \vec{v}_{o}(t) + \alpha \vec{g}_n \delta_{t},
-\end{equation}
-\begin{equation}
-\ell_{o}(t + \delta_t) = \ell_{o}(t) + \beta \vec{v}_{o}(t + \delta_t) \delta_{t}.
-\end{equation}
+\begin{align}
+\vec{v}_{o}(t + \delta_t) &= \vec{v}_{o}(t) + \alpha \vec{g}_n \delta_{t}, \\
+\ell_{o}(t + \delta_t) &= \ell_{o}(t) + \beta \vec{v}_{o}(t + \delta_t) \delta_{t}.
+\end{align}
 
-Note that Eq. 11 goes to show that internal process is equal to a resistance to gravitation, and so the effects of gravity are stronger the faster one goes.
+Note that Eq. \ref{eq_kinematic} goes to show that internal process is equal to a resistance to gravitation, and so the effects of gravity are stronger the faster one goes.
 It also goes to show that $2G$ is the fundamental constant, not $G$.
 
 
