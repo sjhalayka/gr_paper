@@ -59,7 +59,7 @@ The analytical solution for the deflection angle of photons or neutrinos that ar
 \delta_{d} = \frac{4GM}{c^2 r} \left( \frac{1}{\pi \times 180 \times 3600} \right) = 1.75
 \end{equation}
 arc seconds, where $r = 696340000$ is the distance of closest approach (e.g. the Sun's radius).
-The numerically predicted amount is $1.75$ arc seconds, which is practically identical to the amount given by the analytical solution.
+The numerically predicted amount is like $1.75$ arc seconds, which is practically identical to the amount given by the analytical solution.
 
 In the case of the precession of the perihelion of Mercury, do note that Euler integration automatically leads to a negative rotation of Mercury's orbit plane, but given a small enough timeslice, this negative rotation becomes negligible.
 For instance, where $\vec{v}_{o}$ denotes the orbiter's velocity:
@@ -71,7 +71,7 @@ The analytical solution for the precession of the perihelion of Mercury is:
 \delta_{p} = \frac{6 \pi G M}{c^2 (1 - e^2) a} \left( \frac{1}{ \pi \times 180 \times 3600} \right) \left( \frac{365}{88} \times 100 \right) = 42.937
 \end{equation}
 arc seconds per Earth century, where $e = 0.2056$ is the eccentricity and $a = 57.909 \times 10^9$ is the semi-major axis.
-Altogether the numerically predicted amount is like $43$ arc seconds per Earth century, which is practically identical to the amount given by the analytical solution.
+The numerically predicted amount is like $43$ arc seconds per Earth century, which is practically identical to the amount given by the analytical solution.
 
 Where $\ell_s$ denotes the Sun's location, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
 \begin{equation}
@@ -99,7 +99,7 @@ Finally, the Euler integration is:
 \vec{v}_{o}(t + \delta_t) = \vec{v}_{o}(t) + \alpha \vec{g}_n \delta_{t},
 \end{equation}
 \begin{equation}
-\ell_{o}(t + \delta_t) = \ell_{o}(t) + \beta \vec{v}_{o} \delta_{t}.
+\ell_{o}(t + \delta_t) = \ell_{o}(t) + \beta \vec{v}_{o}(t + \delta_t) \delta_{t}.
 \end{equation}
 
 Note that Eq. 11 goes to show that internal process is equal to a resistance to gravitation, and so the effects of gravity are stronger the faster one goes.
