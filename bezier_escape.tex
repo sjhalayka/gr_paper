@@ -13,11 +13,10 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage[margin=0.9in]{geometry}
+
 %\doublespace
+
 %\usepackage[]{lineno}
-
-
-
 %\linenumbers
 
 
@@ -43,13 +42,16 @@ To simplify the calculations, Euler integration is used.
 Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
 We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, static, and non-rotating \cite{misner}:
 \begin{equation}
+\label{efe}
 R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
 \end{equation}
 \begin{equation}
+\label{schwarzschild_line_element}
 ds^2 = -\left( 1 - \frac{R_{s}}{r} \right) c^2 dt^2 + \frac{dr^2}{\left( 1 - \frac{R_{s}}{r} \right)} + r^2 (d\theta^2 + \sin^2 \theta d\phi^2),
 \end{equation}
 where $R_{s}$ is the Schwarzschild radius
 \begin{equation}
+\label{schwarzschild_radius}
 R_{s} = \frac{2GM}{c^2},
 \end{equation}
 and the Sun's mass is $M = 1.98847 \times 10^{30}$, Newton's constant is $G = 6.6743 \times 10^{-11}$, and the speed of light in vacuum is precisely $c = 299792458$.
@@ -58,10 +60,12 @@ From here on in, we shall use Euclidean 3-dimensional space, with Cartesian coor
 
 In the case of deflection of photons and neutrinos by the Sun, the timeslice that we used is:
 \begin{equation}
+\label{dt_1}
 \delta_{t} = 1.
 \end{equation}
 The analytical solution for the deflection angle of photons or neutrinos that are just grazing the Sun is:
 \begin{equation}
+\label{delta_d}
 \delta_{d} = \frac{4GM}{c^2 r} \left( \frac{1}{\pi \times 180 \times 3600} \right) = 1.75
 \end{equation}
 arc seconds, where $r = 6.9634 \times 10^8$ is the distance of closest approach (e.g. the Sun's radius).
@@ -70,10 +74,12 @@ The numerically predicted amount is like $1.75$ arc seconds, which is practicall
 In the case of the precession of the perihelion of Mercury, do note that Euler integration automatically leads to a negative rotation of Mercury's orbit plane, but given a small enough timeslice, this negative rotation becomes negligible.
 For instance, where $\vec{v}_{o}$ denotes the orbiter's velocity vector:
 \begin{equation}
+\label{dt_other}
 \delta_{t} = \frac{c}{\lvert\lvert \vec{v}_{o} \rvert \rvert} \times 10^{-5}.
 \end{equation}
 The analytical solution for the precession of the perihelion of Mercury is:
 \begin{equation}
+\label{delta_p}
 \delta_{p} = \frac{6 \pi G M}{c^2 (1 - e^2) a} \left( \frac{1}{ \pi \times 180 \times 3600} \right) \left( \frac{365}{88} \times 100 \right) = 42.937
 \end{equation}
 arc seconds per Earth century, where $e = 0.2056$ is the eccentricity and $a = 5.7909 \times 10^{10}$ is the semi-major axis.
@@ -81,13 +87,16 @@ The numerically predicted amount is like $43$ arc seconds per Earth century, whi
 
 Where $\ell_s$ denotes the Sun's location, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
 \begin{equation}
+\label{direction_vector}
 \vec{d} = \ell_{s} - \ell_{o},	
 \end{equation}
 \begin{equation}
+\label{direction_unit_vector}
 \hat{d} = \frac{\vec{d}}{\lvert\lvert \vec{d} \rvert\rvert}.
 \end{equation}
 The Newtonian acceleration vector is:
 \begin{equation}
+\label{newton}
 \vec{g}_n = \frac{\hat{d} G M}{{\lvert\lvert \vec{d} \rvert\rvert}^2}.
 \end{equation}
 
@@ -98,29 +107,71 @@ One important value is closely related to the kinematic time dilation:
 \end{equation}
 Another important value is the gravitational time dilation:
 \begin{equation}
+\label{eq_gravitational}
 \beta = \sqrt{1 - \frac{R_{s}}{\lvert \lvert \vec{d} \rvert \rvert}}.
 \end{equation}
 
 Finally, the semi-implicit Euler integration is:
 \begin{align}
+\label{eq_velocity}
 \vec{v}_{o}(t + \delta_t) &= \vec{v}_{o}(t) + \delta_{t} \alpha \vec{g}_n, \\
+\label{eq_position}
 \ell_{o}(t + \delta_t) &= \ell_{o}(t) + \delta_{t} \beta \vec{v}_{o}(t + \delta_t).
 \end{align}
 
-Note that Eq. \ref{eq_kinematic} goes to show that internal process is equal to a resistance to gravitation, and so the effects of gravity are stronger the faster one goes.
+
+
+
+
+
+\section {Conclusions}
+
+\begin{enumerate}
+
+\item
+The Einstein field equations for gravitation are given in Eq. \ref{efe}, which are solved for by Schwarzschild's line element in Eqs. \ref{schwarzschild_line_element} and \ref{schwarzschild_radius}.
+
+\item
+Where velocity is equal to the speed of light, we found that in Eq. \ref{dt_1} that a timeslice of 1 second is suitable.
+
+\item
+We found that Eq. \ref{delta_d}, and the numerical solution both predict the same amount (e.g. $1.75$ arc seconds).
+
+\item
+Where velocity is variable, we found that in Eq. \ref{dt_other} that a variable timeslice is suitable.
+
+\item
+We found that Eq. \ref{delta_p}, and the numerical solution both predict the same amount (e.g. $43$ arc seconds per Earth century).
+
+\item
+We found the direction vector and its unit length version in Eqs. \ref{direction_vector} and \ref{direction_unit_vector}.
+
+\item
+We found the classical Newtonian acceleration in Eq. \ref{newton}.
+
+\item
+Eq. \ref{eq_kinematic} goes to show that internal process is equal to a resistance to gravitation, and that the effects of gravity are stronger the faster one goes.
 It also goes to show that $2G$ is the fundamental constant, not $G$.
 
+\item
+Eq. \ref{eq_gravitational} goes to show that internal process is overcome by gravitational time dilation, and that the effects of gravity are stronger the closer one gets to the gravitating body.
+
+\item
+Eq. \ref{eq_velocity} goes to show that part of the relativistic precession is due to the kinematic time dilation (e.g where $1 \leq \alpha \leq 2$). Mercury is gravitated more that it would be using Newtonian gravitation alone.
+
+\item
+Eq. \ref{eq_position} goes to show that the planet Mercury dwells more when it's closer to the Sun (e.g. where $0 \leq \beta < 1$), causing the rest of the relativistic perihelion precession.
 
 
+\end{enumerate}
 
 
 \begin{thebibliography}{9}
 
 
 \bibitem{misner} Misner et al. Gravitation. (1970)
-
-
-
+\bibitem{mcmahon} McMahon et al. Relativity Demystified. (2005)
+\bibitem{schutz} Schutz. A First Course in General Relativity. (1985)
 
 
 
