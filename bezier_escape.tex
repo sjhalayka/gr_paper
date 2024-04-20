@@ -34,13 +34,26 @@ To simplify the calculations, Euler integration is used.
 \end{abstract}
 
 
+\section{Introduction}
+
+In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun (e.g. where $v \sim c$), and for the relativistic orbit of Mercury around the Sun (e.g. where $v \ll c$).
+
+No tensor calculus is involved -- only high school physics is required.
+For instance, the light clock thought experiment is required in order to understand what kinematic time dilation.
+After one understands the kinematic time dilation, it is not too far a stretch for them to understand graviational time dilation -- gravitation is the interruption of internal process by another process at some distance away.
+
+Because of its simplicity, this paper can serve as a stepping stone for further education on the subject -- including tensor calculus.
+
+We will use Euler integration to keep things simple.
+
+
 
 
 
 \section{On integration using steps in time}
 
 Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
-We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, static, and non-rotating \cite{misner}:
+We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, static, and non-rotating \cite{einstein, misner, schutz, mcmahon}:
 \begin{equation}
 \label{efe}
 R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu},
