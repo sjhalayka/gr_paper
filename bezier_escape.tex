@@ -29,7 +29,7 @@
 
 \begin{abstract}
 A simple numerical solution for general relativity in the Newtonian weak field regime is provided.
-The topics under consideration are the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
+The topics under consideration are the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, and Shapiro time delay.
 To simplify the calculations, Euler integration is used.
 Hopefully, this numerical solution can be found to be an important tool, primarily due to this simplicity.
 \end{abstract}
@@ -37,7 +37,7 @@ Hopefully, this numerical solution can be found to be an important tool, primari
 
 \section{Introduction}
 
-In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun (e.g. where $v \approx c$), and for the relativistic orbit of Mercury around the Sun (e.g. where $v \ll c$).
+In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun (e.g. where $v \approx c$), for the relativistic orbit of Mercury around the Sun (e.g. where $v \ll c$), and for the Shapiro time delay of photons.
 
 No tensor calculus is involved -- only high school Physics is required (e.g. Newtonian gravity, along with its use of 3-dimensional vectors).
 
@@ -57,7 +57,7 @@ Because of its simplicity, this numerical solution can serve as a stepping stone
 
 \section{On integration using steps in time}
 
-Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, and the relativistic rotation of Mercury's orbit plane.
+Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, and the Shapiro time delay.
 We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, static, and non-rotating \cite{einstein, misner, schutz, mcmahon}:
 \begin{equation}
 \label{efe}
@@ -102,6 +102,36 @@ The analytical solution for the precession of the perihelion of Mercury is:
 \end{equation}
 arc seconds per Earth century, where $e = 0.2056$ is the eccentricity and $a = 5.7909 \times 10^{10}$ is the semi-major axis.
 The numerically predicted amount is like $43$ arc seconds per Earth century, which is practically identical to the amount given by the analytical solution.
+
+
+
+
+
+In the case of Shapiro time delay, the timeslice that we used is:
+\begin{equation}
+\label{dt_1_div_c}
+\delta_{t} = \frac{1}{c}.
+\end{equation}
+The analytical solution for the Shapiro time delay is:
+\begin{equation}
+\label{delta_s}
+\delta_{s} = \frac{2GM}{c^3} \log\left( \frac{R_x + R_y}{R_x - R_y} \right) = 10^{-4}
+\end{equation}
+seconds, where 
+\begin{equation}
+\label{r_x}
+R_x = \lvert\lvert (-1000 \times c, R_g, 0) - (0, 0, 0) \rvert\rvert
+\end{equation}
+is the distance from the sender to the Sun's centre, and
+\begin{equation}
+\label{r_y}
+R_y = \lvert\lvert (-1000 \times c, R_g, 0) - (0, R_g, 0) \rvert\rvert.
+\end{equation}
+is the distance from the sender to the Sun's surface, which is just grazed at the Sun's radius of $R_g = 6.9634 \times 10^8$.
+We assume that the communication system is symmetric, and so the distance from the receiver to the Sun's centre is also $R_x$ and the distance from the receiver to the Sun's grazed surface is also $R_y$.
+The numerically predicted amount is like $10^{-4}$ seconds, which is practically identical to the amount given by the analytical solution.
+Note that the analytical solution is only an approximation, and that the numerical solution is the correct one by default.
+
 
 Where $\ell_s$ denotes the Sun's location, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
 \begin{equation}
@@ -154,13 +184,22 @@ The Einstein field equations for gravitation are given in Eq. \ref{efe}, which a
 Where velocity is equal to the speed of light (or very close, like for neutrinos), we found that in Eq. \ref{dt_1} that a timeslice of 1 second is suitable.
 
 \item
-We found that Eq. \ref{delta_d}, and the numerical solution both predict the same amount (e.g. $1.75$ arc seconds).
+We found that Eq. \ref{delta_d} and the numerical solution both predict the same amount (e.g. $1.75$ arc seconds).
 
 \item
 Where velocity is variable, we found that in Eq. \ref{dt_other} that a variable timeslice is suitable.
 
 \item
-We found that Eq. \ref{delta_p}, and the numerical solution both predict the same amount (e.g. $43$ arc seconds per Earth century).
+We found that Eq. \ref{delta_p} and the numerical solution both predict the same amount (e.g. $43$ arc seconds per Earth century).
+
+\item
+Where velocity is equal to the speed of light for Shapiro delay, we found that in Eq. \ref{dt_1_div_c} that a timeslice of $1/c$ seconds is suitable.
+
+\item 
+We found that Eqs. \ref{delta_s}, \ref{r_x} and \ref{r_y} and the numerical solution both predict the same amount (e.g. $10^{-4}$ seconds).
+
+
+
 
 \item
 We found the direction vector and its unit length version in Eqs. \ref{direction_vector} and \ref{direction_unit_vector}.
@@ -183,6 +222,8 @@ Mercury is gravitated more than it would be using Newtonian gravitation alone, f
 Eq. \ref{eq_position} goes to show that the planet Mercury dwells longer when it's closer to the Sun (e.g. where $0 \leq \beta < 1$), causing the rest of the relativistic perihelion precession. 
 Mercury is gravitated more than it would be using Newtonian gravitation alone, for Newtonian gravity alone does not take the contraction of space around the gravitating body into account.
 
+
+
 \end{enumerate}
 
 
@@ -191,16 +232,12 @@ Mercury is gravitated more than it would be using Newtonian gravitation alone, f
 The numerical solution to Einstein's field equations that is provided here requires a mastery of only high school-level mathematics and software development.
 This allows the student to become gently acquainted with general relativity, before having to master the required tensor calculus.
 
-The solution calculated both the deflection of photons and neutrinos by the Sun, and the relativistic orbit of Mercury.
+The solution calculated the deflection of photons and neutrinos by the Sun, the relativistic orbit of Mercury, and Shapiro time delay.
 For instance, the solution calculated the deflection angle of $1.75$ arc seconds.
 As well, the solution calculated a precession angle of $43$ arc seconds per Earth century.
-Thus, the solution predicts:
-\begin{enumerate}
-\item The deflection of photons and neutrinos, twice that of Newtonian gravity alone
-\item The relativistic precession of the perihelion of Mercury
-\item Pound-Rebka gravitational redshift
-\end{enumerate}
-The only classic Solar System test of general relativity left to calculate is the Shapiro time delay.
+Finally, the solution calculated a Shapiro time delay of $10^{-4}$ seconds.
+Thus, the solution correctly calculates all four Solar System tests of general relativity (including the Pound-Rebka gravitational redshift, by default).
+
 
 
 
