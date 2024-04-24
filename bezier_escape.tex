@@ -29,7 +29,7 @@
 
 \begin{abstract}
 A simple numerical solution for general relativity in the Newtonian weak field regime is provided.
-The topics under consideration are the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, and the Shapiro time delay.
+The topics under consideration are the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, the Shapiro time delay, and the gravitational redshift -- namely, the four Solar System tests of general relativity.
 To simplify the calculations, Euler integration is used.
 Hopefully, this numerical solution can be found to be an important tool, primarily due to this simplicity.
 \end{abstract}
@@ -37,7 +37,7 @@ Hopefully, this numerical solution can be found to be an important tool, primari
 
 \section{Introduction}
 
-In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun (e.g. where $v \approx c$), for the relativistic orbit of Mercury around the Sun (e.g. where $v \ll c$), and for the Shapiro time delay of photons.
+In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun, for the relativistic orbit of Mercury around the Sun, for the Shapiro time delay of photons, and for the gravitational redshift.
 
 No tensor calculus is involved -- only high school Physics is required (e.g. Newtonian gravity, along with its use of 3-dimensional vectors).
 
@@ -183,22 +183,19 @@ The Einstein field equations for gravitation are given in Eq. \ref{efe}, which a
 Where velocity is equal to the speed of light (or very close, like for neutrinos), we found that in Eq. \ref{dt_1} that a timeslice of 1 second is suitable.
 
 \item
-We found that Eq. \ref{delta_d} and the numerical solution both predict the same amount (e.g. $1.75$ arc seconds).
+We found that Eq. \ref{delta_d} and the numerical solution both predict the same amount (e.g. $1.75$ arc seconds of deflection).
 
 \item
 Where velocity is variable, we found that in Eq. \ref{dt_other} that a variable timeslice is suitable.
 
 \item
-We found that Eq. \ref{delta_p} and the numerical solution both predict the same amount (e.g. $43$ arc seconds per Earth century).
+We found that Eq. \ref{delta_p} and the numerical solution both predict the same amount (e.g. $43$ arc seconds per Earth century of rotation).
 
 \item
 Where velocity is equal to the speed of light for the Shapiro delay, we found that in Eq. \ref{dt_1_div_c} that a timeslice of $1/c$ seconds is suitable.
 
 \item 
-We found that Eqs. \ref{delta_s}, \ref{r_x} and \ref{r_y} and the numerical solution both predict the same amount (e.g. $10^{-4}$ seconds).
-
-
-
+We found that Eqs. \ref{delta_s}, \ref{r_x} and \ref{r_y} and the numerical solution both predict the same amount (e.g. $10^{-4}$ seconds of delay).
 
 \item
 We found the direction vector and its unit length version in Eqs. \ref{direction_vector} and \ref{direction_unit_vector}.
@@ -235,7 +232,7 @@ The solution calculated the deflection of photons and neutrinos by the Sun, the 
 For instance, the solution calculated the deflection angle of $1.75$ arc seconds.
 As well, the solution calculated a precession angle of $43$ arc seconds per Earth century.
 Finally, the solution calculated a Shapiro time delay of $10^{-4}$ seconds.
-Thus, the solution correctly calculates all four Solar System tests of general relativity (including the Pound-Rebka gravitational redshift, by default).
+Thus, the solution correctly calculates all four Solar System tests of general relativity (including the gravitational redshift, by default).
 
 
 
