@@ -133,7 +133,7 @@ We assume that the communication system is symmetric, and so the distance from t
 The numerically predicted amount is like $10^{-4}$ seconds, which is practically identical to the amount given by the analytical solution.
 Note that the analytical solution is only an approximation, and that the numerical solution is the correct measure (e.g. the ground truth).
 
-Generally, where $\ell_s$ denotes the Sun's location at the origin, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
+Generally, in all cases, where $\ell_s$ denotes the Sun's location at the origin, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
 \begin{equation}
 \label{direction_vector}
 \vec{d} = \ell_{s} - \ell_{o},	
@@ -219,9 +219,16 @@ Mercury is gravitated more than it would be using Newtonian gravitation alone, f
 With regard to Mercury in particular, Eq. \ref{eq_position} goes to show that the planet dwells longer when it's closer to the Sun (e.g. where $0 \leq \beta < 1$), causing the rest of the relativistic perihelion precession. 
 Mercury is gravitated more than it would be using Newtonian gravitation alone, for Newtonian gravity alone does not take the contraction of space around the gravitating body into account.
 
-
+\item
+In the end, we have simulated the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, the Shapiro time delay.
+All numerical solutions predict the same values as the analytical solutions.
 
 \end{enumerate}
+
+
+
+
+
 
 
 \section{Conclusion}
