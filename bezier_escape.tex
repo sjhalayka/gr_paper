@@ -77,6 +77,10 @@ Is essence, the Schwarzschild solution is a relativistic version of the shell th
 
 From here on in, we shall use Euclidean 3-dimensional space, with Cartesian coordinates.
 
+
+
+
+
 In the case of deflection of photons and neutrinos by the Sun, the timeslice that we used is:
 \begin{equation}
 \label{dt_1}
@@ -89,6 +93,11 @@ The analytical solution for the deflection angle of photons or neutrinos that ar
 \end{equation}
 arc seconds, where $r = 6.9634 \times 10^8$ is the distance of closest approach (e.g. the Sun's radius).
 The numerically predicted amount is like $1.75$ arc seconds, which is practically identical to the amount given by the analytical solution.
+See Fig. 1 for a diagram of the deflection.
+
+
+
+
 
 In the case of the precession of the perihelion of Mercury, do note that Euler integration automatically leads to a negative rotation of Mercury's orbit plane, but given a small enough timeslice, this negative rotation becomes negligible.
 For instance, where $\vec{v}_{o}$ denotes the orbiter's velocity vector:
@@ -103,7 +112,7 @@ The analytical solution for the precession of the perihelion of Mercury is:
 \end{equation}
 arc seconds per Earth century, where $e = 0.2056$ is the eccentricity and $a = 5.7909 \times 10^{10}$ is the semi-major axis.
 The numerically predicted amount is like $43$ arc seconds per Earth century, which is practically identical to the amount given by the analytical solution.
-
+See Fig. 2 for a diagram of the precession.
 
 
 
@@ -130,7 +139,7 @@ R_y = \lvert\lvert (-1000 \times c, R_g, 0) - (0, R_g, 0) \rvert\rvert.
 \end{equation}
 is the distance from the sender to the Sun's surface, which is just grazed at the Sun's radius of $R_g = 6.9634 \times 10^8$.
 We assume that the communication system is symmetric, and so the distance from the receiver to the Sun's centre is also $R_x$ and the distance from the receiver to the Sun's grazed surface is also $R_y$.
-See Fig. 1 for a diagram of the symmetric communication system.
+See Fig. 3 for a diagram of the symmetric communication system.
 The numerically predicted amount is like $10^{-4}$ seconds, which is practically identical to the amount given by the analytical solution.
 Note that the analytical solution is only an approximation, and that the numerical solution is the correct measure (e.g. the ground truth).
 
@@ -266,6 +275,7 @@ The C++ / OpenGL code is available upon request.
 
 \begin{figure} 
 \centering
+\label{fig1}
   \includegraphics[width = 6 in]{deflection.png}
   \caption{ A diagram showing deflection.
 The effect is highly exaggerated in order to be perceptible.
@@ -274,6 +284,7 @@ The effect is highly exaggerated in order to be perceptible.
 
 \begin{figure} 
 \centering
+\label{fig2}
   \includegraphics[width = 6 in]{precession.png}
   \caption{ A diagram showing precession, where the orbit does not quite form a closed ellipse.
 The effect is highly exaggerated in order to be perceptible.
@@ -284,9 +295,9 @@ The effect is highly exaggerated in order to be perceptible.
 
 \begin{figure} 
 \centering
+\label{fig3}
   \includegraphics[width = 6 in]{comm.png}
-  \caption{ Communication system for predicting the Shapiro time delay.
-The Sun is shown in the centre, not to scale.
+  \caption{ Symmetric communication system, for predicting the Shapiro time delay.
 }
 \end{figure}
 
