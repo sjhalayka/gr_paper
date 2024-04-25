@@ -67,7 +67,7 @@ R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} 
 \label{schwarzschild_line_element}
 ds^2 = -\left( 1 - \frac{R_{s}}{r} \right) c^2 dt^2 + \frac{dr^2}{\left( 1 - \frac{R_{s}}{r} \right)} + r^2 (d\theta^2 + \sin^2 \theta d\phi^2),
 \end{equation}
-where $R_{s}$ is the Schwarzschild radius
+where $R_{s}$ is the Schwarzschild radius:
 \begin{equation}
 \label{schwarzschild_radius}
 R_{s} = \frac{2GM}{c^2},
@@ -130,6 +130,7 @@ R_y = \lvert\lvert (-1000 \times c, R_g, 0) - (0, R_g, 0) \rvert\rvert.
 \end{equation}
 is the distance from the sender to the Sun's surface, which is just grazed at the Sun's radius of $R_g = 6.9634 \times 10^8$.
 We assume that the communication system is symmetric, and so the distance from the receiver to the Sun's centre is also $R_x$ and the distance from the receiver to the Sun's grazed surface is also $R_y$.
+See Fig. 1 for a diagram of the symmetric communication system.
 The numerically predicted amount is like $10^{-4}$ seconds, which is practically identical to the amount given by the analytical solution.
 Note that the analytical solution is only an approximation, and that the numerical solution is the correct measure (e.g. the ground truth).
 
@@ -140,9 +141,9 @@ Generally, in all cases, where $\ell_s$ denotes the Sun's location at the origin
 \end{equation}
 \begin{equation}
 \label{direction_unit_vector}
-\hat{d} = \frac{\vec{d}}{\lvert\lvert \vec{d} \rvert\rvert}.
+\hat{d} = \frac{\vec{d}}{\lvert\lvert \vec{d} \rvert\rvert},
 \end{equation}
-The Newtonian acceleration vector is:
+the Newtonian acceleration vector is:
 \begin{equation}
 \label{newton}
 \vec{g}_n = \frac{\hat{d} G M}{{\lvert\lvert \vec{d} \rvert\rvert}^2}.
@@ -253,12 +254,26 @@ The C++ / OpenGL code is available upon request.
 
 \bibitem{einstein} Einstein. Relativity -- The Special and General Theory. (1916)
 \bibitem{morin} Morin. Special Relativity for the Enthusiastic Beginner. (2017)
-
 \bibitem{misner} Misner et al. Gravitation. (1970)
 \bibitem{schutz} Schutz. A First Course in General Relativity. (1985)
 \bibitem{mcmahon} McMahon et al. Relativity Demystified. (2005)
 
 \end{thebibliography}
+
+
+
+
+
+\begin{figure} 
+\centering
+  \includegraphics[width = 6 in]{comm.png}
+  \caption{ Communication system for predicting the Shapiro time delay.
+The Sun is shown in the centre, not to scale.
+}
+
+\end{figure}
+
+
 
 
 
