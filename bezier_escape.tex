@@ -151,19 +151,19 @@ Note that the analytical solution is only an approximation, and that the numeric
 
 
 Since we now know for sure that space is contracted around a gravitating body, we know that gravitational redshift automatically occurs.
-Where $\lambda_{e}$ is the photon wavelength emitted at the distance of $r_e$, the photon wavelength at infinite distance is:
+%Where $\lambda_{e}$ is the photon wavelength emitted at the distance of $r_e$, the photon wavelength at infinite distance is:
 %\begin{equation}
 %\label{wl_inf}
 %\lambda_{\infty} = \frac{\lambda_{e}}{\sqrt{1 - \frac{R_s}{r_e}}}
 %\end{equation}
 
+In the case of the Sun, where $\lambda_{e} = 1$, $r_e = 6.9634 \times 10^8$ (e.g. the Sun's radius), and $r_i$ is practically infinite, it is found that $\lambda_{i}$ is:
 \begin{equation}
 \label{wl_inf}
-\lambda_{i} = \lambda_{e} \frac{        \sqrt{1 - \frac{R_s}{r_i}     }  }{  \sqrt{       1 - \frac{R_s}{r_e}     } }
+\lambda_{i} = \lambda_{e} \frac{        \sqrt{1 - \frac{R_s}{r_i}     }  }{  \sqrt{       1 - \frac{R_s}{r_e}     } } = 1.00000212
 \end{equation}
 metres.
-For instance, in the case of the Earth, where $\lambda_{e} = 1$, $M = 5.9722 \times 10^{24}$, $r_e = 6.371 \times 10^6$, and $r_i$ is practically infinite, it is found that $\lambda_{i} = 1.0000000006961$.
-The numerically predicted amount is like $1.0000000006961$ metres, which is practically identical to the amount given by the analytical solution.
+The numerically predicted amount is like $1.00000212$ metres, which is practically identical to the amount given by the analytical solution.
 See Fig. 4 for a diagram of the gravitational redshift.
 
 
@@ -342,7 +342,7 @@ Note that the round-trip time in the absence of the Sun is $\zeta = 4 R_y / c$, 
 \centering
 \label{fig4}
   \includegraphics[width = 6 in]{redshift.png}
-  \caption{ A blue photon is emitted.
+  \caption{ A blue photon is emitted normal to the surface of a body.
 The photon's wavelength increases as it escapes the gravitational field, causing it to redden.
 }
 \end{figure}
