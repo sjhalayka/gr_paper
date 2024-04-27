@@ -37,7 +37,7 @@ Hopefully, this numerical solution can be found to be an important tool, primari
 
 \section{Introduction}
 
-In this paper we will describe a numerical solution for the deflection of light and neutrinos by the Sun, for the relativistic orbit of Mercury around the Sun, for the Shapiro time delay of photons, and for the gravitational redshift.
+In this paper we will describe a numerical solution for the deflection of photons and neutrinos by the Sun, for the relativistic orbit of Mercury around the Sun, for the Shapiro time delay of photons, and for the gravitational redshift of photons.
 
 No tensor calculus is involved -- only high school Physics is required (e.g. Newtonian gravity, the shell theorem, and the use of 3-dimensional vectors).
 
@@ -152,11 +152,20 @@ Note that the analytical solution is only an approximation, and that the numeric
 
 Since we now know for sure that space is contracted around a gravitating body, we know that gravitational redshift automatically occurs.
 Where $\lambda_{e}$ is the photon wavelength emitted at the distance of $r_e$, the photon wavelength at infinite distance is:
+%\begin{equation}
+%\label{wl_inf}
+%\lambda_{\infty} = \frac{\lambda_{e}}{\sqrt{1 - \frac{R_s}{r_e}}}
+%\end{equation}
+
 \begin{equation}
 \label{wl_inf}
-\lambda_{\infty} = \frac{\lambda_{e}}{\sqrt{1 - \frac{R_s}{r_e}}}
+\lambda_{i} = \lambda_{e} \frac{        \sqrt{1 - \frac{R_s}{r_i}     }  }{  \sqrt{       1 - \frac{R_s}{r_e}     } }. 
 \end{equation}
-For instance, in the case of the Earth, where $\lambda_{e} = 1$, $M = 5.9722 \times 10^{24}$, and $r_e = 6.371 \times 10^6$, it is found that $\lambda_{\infty} = 1.0000000006960998444$.
+For instance, in the case of the Earth, where $\lambda_{e} = 1$, $M = 5.9722 \times 10^{24}$, $r_e = 6.371 \times 10^6$, and $r_i$ is practically infinite, it is found that $\lambda_{i} = 1.0000000006960998444$.
+The numerically predicted amount is like $1.0000000006960998444$ seconds, which is practically identical to the amount given by the analytical solution.
+See Fig. 4 for a diagram of the gravitational redshift.
+
+
 
 
 
@@ -228,7 +237,7 @@ Where velocity is equal to the speed of light for the Shapiro time delay, we fou
 We found that Eqs. \ref{delta_s}, \ref{r_x} and \ref{r_y} and the numerical solution both predict the same amount (e.g. $10^{-4}$ seconds of delay).
 
 \item
-We found that Eq. \ref{wl_inf} predicts a redshift of the photons that escape the gravitational field.
+We found that Eq. \ref{wl_inf} and the numerical solution both predict the same amount of redshift of the photons that escape the gravitational field (e.g. an increase in wavelength of $6.961 \times 10^{-10}$ metres).
 
 
 \item
@@ -263,22 +272,23 @@ All numerical solutions predict the same values as the analytical solutions.
 
 
 
-
 \section{Conclusion}
 
 The numerical solution to Einstein's field equations that is provided here requires a mastery of only high school-level mathematics and software development.
 This allows the student to become gently acquainted with general relativity and numerical algorithms, before having to master the required tensor calculus.
 
-The solution calculated the deflection of photons and neutrinos by the Sun, the relativistic orbit of Mercury, and the Shapiro time delay.
+The solution calculated the deflection of photons and neutrinos by the Sun, the relativistic orbit of Mercury, the Shapiro time delay, and the gravitational redshift.
 For instance, the solution calculated the deflection angle of $1.75$ arc seconds.
 As well, the solution calculated a precession angle of $43$ arc seconds per Earth century.
-Finally, the solution calculated a Shapiro time delay of $10^{-4}$ seconds.
-Thus, the solution correctly calculates all four Solar System tests of general relativity (including the gravitational redshift, by default).
+Also, the solution calculated a Shapiro time delay of $10^{-4}$ seconds.
+Finally, the solution calculated an increase in the wavelength of $6.961 \times 10^{-10}$ metres) because of gravitational redshift.
+Thus, the solution correctly calculates all four Solar System tests of general relativity.
 
 The C++ / OpenGL codes are available upon request.
 
 
 
+\pagebreak
 
 
 \begin{thebibliography}{9}
@@ -320,14 +330,21 @@ The effect is highly exaggerated in order to be perceptible.
 \begin{figure} 
 \centering
 \label{fig3}
-  \includegraphics[width =6 in]{comm.png}
+  \includegraphics[width = 6 in]{comm.png}
   \caption{ Symmetric communication system, for predicting the Shapiro time delay.
 Note that the round-trip time in the absence of the Sun is $\zeta = 4 R_y / c$, and that the time in the presence of the Sun is $\zeta + \delta_{s}$, which is just a little bit longer.
 }
 \end{figure}
 
 
-
+\begin{figure} 
+\centering
+\label{fig4}
+  \includegraphics[width = 6 in]{redshift.png}
+  \caption{ A blue photon is emitted by the gray body.
+The photon's wavelength increases as it escapes the gravitational field, causing it to redden.
+}
+\end{figure}
 
 
 
