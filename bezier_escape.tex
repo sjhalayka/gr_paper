@@ -55,9 +55,9 @@ Because of its simplicity, this numerical solution can serve as a stepping stone
 
 
 
-\section{On integration using steps in time}
+\section{On the Schwarzschild solution}
 
-Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, and the Shapiro time delay.
+Here we take into consideration the kinematic and gravitational time dilation / length contraction to calculate the deflection of photons and neutrinos by the Sun, the relativistic rotation of Mercury's orbit plane, the Shapiro time delay, and the gravitational redshift.
 We rely on the Schwarzschild solution, which means that the Sun is taken to be spherically symmetric, stationary, static, and non-rotating \cite{einstein, misner, schutz, mcmahon}:
 \begin{equation}
 \label{efe}
@@ -75,15 +75,15 @@ R_{s} = \frac{2GM}{c^2},
 and the Sun's mass is $M = 1.98847 \times 10^{30}$, Newton's constant is $G = 6.6743 \times 10^{-11}$, and the speed of light in vacuum is precisely $c = 299792458$.
 Is essence, the Schwarzschild solution is a relativistic version of the shell theorem.
 
-
-
-
-
 From here on in, we shall use Euclidean 3-dimensional space, with Cartesian coordinates.
 
 
 
 
+
+
+
+\section{On deflection}
 
 In the case of deflection of photons and neutrinos by the Sun, the timeslice that we used is:
 \begin{equation}
@@ -103,6 +103,10 @@ See Fig. 1 for a diagram of the deflection.
 
 
 
+
+\section{On precession}
+
+
 In the case of the precession of the perihelion of Mercury, do note that Euler integration automatically leads to a negative rotation of Mercury's orbit plane, but given a small enough timeslice, this negative rotation becomes negligible.
 For instance, where $\vec{v}_{o}$ denotes the orbiter's velocity vector:
 \begin{equation}
@@ -119,6 +123,9 @@ The numerically predicted amount is like $43$ arc seconds per Earth century, whi
 See Fig. 2 for a diagram of the precession.
 
 
+
+
+\section{On Shapiro time delay}
 
 
 In the case of the Shapiro time delay, the timeslice that we used is:
@@ -149,6 +156,15 @@ The numerically predicted amount is like $10^{-4}$ seconds, which is practically
 Note that the analytical solution is only an approximation, and that the numerical solution is the ground truth.
 
 
+
+
+
+
+
+
+\section{On gravitational redshift}
+
+
 In the case of the gravitational reshift, the timeslice that we used is:
 \begin{equation}
 \label{dt_1_too}
@@ -166,6 +182,10 @@ See Fig. 4 for a diagram of the gravitational redshift.
 
 
 
+
+
+
+\section{On integration using steps in time}
 
 
 Generally, in all cases, where $\ell_s$ denotes the Sun's location at the origin, $\ell_o$ denotes the orbiter's location, and $\vec{d}$ denotes the direction vector that points from the orbiter toward the Sun:
@@ -287,7 +307,7 @@ The C++ / OpenGL codes are available upon request.
 
 
 
-\pagebreak
+
 
 
 \begin{thebibliography}{9}
