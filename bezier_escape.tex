@@ -42,12 +42,18 @@ In this paper we will describe a numerical solution for the deflection of photon
 No tensor calculus is involved -- only high school Physics is required (e.g. Newtonian gravity, the shell theorem, and the use of 3-dimensional vectors).
 
 It is also recommended that one has already read about special relativity \cite{einstein, morin}, and thus kinematic time dilation.
-For instance, Einstein's light clock thought experiment is helpful for understanding kinematic time dilation.
+For instance, Einstein's light clock thought experiment is helpful for understanding kinematic time dilation, where $\vec{v}$ is the 3-dimensional velocity vector, the speed of light in vacuum is precisely $c = 299792458$, and $d\tau/dt$ is the rate of time (e.g. clock tick rate):
+\begin{equation}
+\label{eq_intro_kinematic}
+\frac{d\tau}{dt} = \frac{\sqrt{c^2 - \lvert\lvert \vec{v}\rvert\rvert^2}}{c} = \sqrt{1 - \frac{\lvert\lvert \vec{v}\rvert\rvert^2}{c^2}}.
+\end{equation}
+The faster one goes, the slower their rate of time.
+See Fig. 1 for a diagram of the kinematic time dilation.
+
 After one understands kinematic time dilation, it is not too far a stretch for them to understand gravitational time dilation -- gravitation is the interruption of internal process by some other process at some distance away.
 
-Note that this solution is only valid in the weak field, where the gradient of the gravitational time dilation practically vanishes, and Newton's inverse square law holds true -- where only space is curved.
-
-Because of its simplicity, this numerical solution can serve as a stepping stone for further education on the subject -- including tensor calculus.
+Note that this solution is only valid in the weak field, where the gradient of the gravitational time dilation practically vanishes, and Newton's inverse square law holds true -- where only space is curved. 
+Because of its simplicity however, this numerical solution can serve as a stepping stone for further education on the subject -- including tensor calculus.
 
 
 
@@ -72,11 +78,16 @@ where $R_{s}$ is the Schwarzschild radius:
 \label{schwarzschild_radius}
 R_{s} = \frac{2GM}{c^2},
 \end{equation}
-and the Sun's mass is $M = 1.98847 \times 10^{30}$, Newton's constant is $G = 6.6743 \times 10^{-11}$, and the speed of light in vacuum is precisely $c = 299792458$.
+and the Sun's mass is $M = 1.98847 \times 10^{30}$, and Newton's constant is $G = 6.6743 \times 10^{-11}$.
 Is essence, the Schwarzschild solution is a relativistic version of the shell theorem.
+See Fig. 2 for a visualization of the shell theorem.
 
-
-
+The gravitational time dilation is:
+\begin{equation}
+\label{eq_intro_gravitational}
+\frac{d\tau}{dt} = \sqrt{1 - \frac{R_s}{r}}.
+\end{equation}
+The closer one gets, the slower their rate of time.
 
 
 
@@ -94,7 +105,7 @@ The analytical solution for the deflection angle of photons or neutrinos that ar
 \end{equation}
 arc seconds, where $r = 6.9634 \times 10^8$ is the distance of closest approach (e.g. the Sun's radius).
 The numerically predicted amount is like $1.75$ arc seconds, which is practically identical to the amount given by the analytical solution.
-See Fig. 1 for a diagram of the deflection.
+See Fig. 3 for a diagram of the deflection.
 
 
 
@@ -117,7 +128,7 @@ The analytical solution for the precession of the perihelion of Mercury is:
 \end{equation}
 arc seconds per Earth century, where $e = 0.2056$ is the eccentricity and $a = 5.7909 \times 10^{10}$ is the semi-major axis.
 The numerically predicted amount is like $43$ arc seconds per Earth century, which is practically identical to the amount given by the analytical solution.
-See Fig. 2 for a diagram of the precession.
+See Fig. 4 for a diagram of the precession.
 
 
 
@@ -150,7 +161,7 @@ We assume that the communication system is symmetric, and so the distance from t
 This analytical solution also relies on the fact that $R_x$ and $R_y$ are likely to be much larger than $R_g$.
 The numerically predicted amount is like $10^{-4}$ seconds, which is practically identical to the amount given by the analytical solution.
 Note that the analytical solution is only an approximation, and that the numerical solution is the ground truth.
-See Fig. 3 for a diagram of the symmetric communication system.
+See Fig. 5 for a diagram of the symmetric communication system.
 
 
 
@@ -174,7 +185,7 @@ In the case of the Sun, where $\lambda_{e} = 1$, $r_e = 6.9634 \times 10^8$ (e.g
 \end{equation}
 metres.
 The numerically predicted amount is like $1.00000212$ metres, which is practically identical to the amount given by the analytical solution.
-See Fig. 4 for a diagram of the gravitational redshift.
+See Fig. 6 for a diagram of the gravitational redshift.
 
 
 
@@ -229,8 +240,13 @@ Note that Newtonian gravity is the result where $\alpha = \beta = 1$.
 
 \begin{enumerate}
 
+
+\item
+Kinematic time dilation is introduced in Eq. \ref{eq_intro_kinematic}.
+
 \item
 The Einstein field equations for gravitation are given in Eq. \ref{efe}, which are solved for by Schwarzschild's line element in Eqs. \ref{schwarzschild_line_element} and \ref{schwarzschild_radius}.
+Gravitational time dilation is introduced in Eq. \ref{eq_intro_gravitational}.
 
 \item
 Where velocity is equal to the speed of light (or very close, like for neutrinos), we found that in Eq. \ref{dt_1} that a timeslice of 1 second is suitable.
@@ -319,13 +335,38 @@ The C++ / OpenGL codes are available upon request.
 \end{thebibliography}
 
 
-\pagebreak
+
+
+
+
+
 
 
 
 \begin{figure} 
 \centering
 \label{fig1}
+  \includegraphics[width = 6 in]{kinematic_time_dilation.png}
+  \caption{ A diagram showing kinematic time dilation as a right triangle of constant hypotenuse length of $c$.
+Thus, only the Pythagorean theorem is required to understand kinematic time dilation, where $c^2 = \lvert\lvert \vec{v}\rvert\rvert^2 + (c d\tau/dt)^2 $.
+}
+\end{figure}
+
+
+
+
+\begin{figure} 
+\centering
+\label{fig2}
+  \includegraphics[width = 6 in]{shell_theorem.png}
+  \caption{ A diagram showing the shell theorem -- from the outside, a homogeneous shell is gravitationally equivalent to a point particle.
+}
+\end{figure}
+
+
+\begin{figure} 
+\centering
+\label{fig3}
   \includegraphics[width = 6 in]{deflection.png}
   \caption{ A diagram showing deflection.
 }
@@ -333,7 +374,7 @@ The C++ / OpenGL codes are available upon request.
 
 \begin{figure} 
 \centering
-\label{fig2}
+\label{fig4}
   \includegraphics[width = 6 in]{precession.png}
   \caption{ A diagram showing precession, where the orbit does not quite form a closed ellipse.
 }
@@ -343,7 +384,7 @@ The C++ / OpenGL codes are available upon request.
 
 \begin{figure} 
 \centering
-\label{fig3}
+\label{fig5}
   \includegraphics[width = 6 in]{comm.png}
   \caption{ Symmetric communication system, for predicting the Shapiro time delay.
 Note that the round-trip time in the absence of the Sun is $\zeta = 4 R_y / c$, and that the time in the presence of the Sun is $\zeta + \delta_{s}$, which is just a little bit longer.
@@ -353,7 +394,7 @@ Note that the round-trip time in the absence of the Sun is $\zeta = 4 R_y / c$, 
 
 \begin{figure} 
 \centering
-\label{fig4}
+\label{fig6}
   \includegraphics[width = 6 in]{redshift.png}
   \caption{
 A diagram showing gravitational redshift.
