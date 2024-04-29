@@ -225,16 +225,16 @@ Another parameter is the gravitational time dilation:
 \beta = \sqrt{1 - \frac{R_{s}}{\lvert \lvert \vec{d} \rvert \rvert}}.
 \end{equation}
 
-Finally, the semi-implicit Euler integration is:
+Finally, the semi-implicit Euler integration for velocity and then location is:
 \begin{align}
 \label{eq_velocity}
 \vec{v}_{o}(t + \delta_t) &= \vec{v}_{o}(t) + \delta_{t} \alpha \vec{g}_n, \\
 \label{eq_position}
 \ell_{o}(t + \delta_t) &= \ell_{o}(t) + \delta_{t} \beta \vec{v}_{o}(t + \delta_t).
 \end{align}
-
 Note that Newtonian gravity is the result where $\alpha = \beta = 1$.
-
+See Fig. 7 for a diagram of the integration of velocity.
+See Fig. 8 for a diagram of the integration of location.
 
 
 
@@ -405,6 +405,25 @@ A blue photon is emitted normal to the surface of a body.
 The photon's wavelength increases as it escapes the gravitational field, causing it to redden.
 }
 \end{figure}
+
+\begin{figure} 
+\centering
+\label{fig7}
+  \includegraphics[width = 6 in]{velocity.png}
+  \caption{
+A diagram of the integration of velocity.
+}
+\end{figure}
+
+\begin{figure} 
+\centering
+\label{fig8}
+  \includegraphics[width = 6 in]{location.png}
+  \caption{
+A diagram of the integration of location.
+}
+\end{figure}
+
 
 
 
